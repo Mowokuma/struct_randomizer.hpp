@@ -8,27 +8,11 @@
 #include <string_view>
 #include <vector>
 
-consteval std::uint64_t compile_time_seed() {
-  constexpr char time[] = __TIME__;
-  
-  const std::uint64_t hour = (time[0] - '0') * 10 + (time[1] - '0');
-  const std::uint64_t minute = (time[3] - '0') * 10 + (time[4] - '0');
-  const std::uint64_t second = (time[6] - '0') * 10 + (time[7] - '0');
-  
-  std::uint64_t seed = hour * 3600 + minute * 60 + second;
-  seed += 0x9E3779B97F4A7C15ULL;
-  seed = (seed ^ (seed >> 30)) * 0xBF58476D1CE4E5B9ULL;
-  seed = (seed ^ (seed >> 27)) * 0x94D049BB133111EBULL;
-
-  return seed ^ (seed >> 31);
-}
-
 // ============================================================
 // Configuration
 // ============================================================
-
 #ifndef RANDOM_LAYOUT_SEED
-#define RANDOM_LAYOUT_SEED (compile_time_seed())
+#error "RANDOM_LAYOUT_SEED must be defined. Ex: -DRANDOM_LAYOUT_SEED=0x44"
 #endif
 
 // Random padding inserted inbetween each field.
