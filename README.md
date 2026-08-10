@@ -6,7 +6,7 @@ This simply takes normal structs, permutes all of their fields, and inserts rand
 
 As of today, only GCC supports C++26 reflection, so you'll have to wait a bit longer to use this with other compilers. To make it work with GCC, you need GCC 16 and must compile with the `-freflection -std=c++26` flags. 
 
-You can play with it on Compiler Explorer [here](https://godbolt.org/z/odf59nMna).
+You can play with it on Compiler Explorer [here](https://godbolt.org/z/YK6dnhzeE).
  
 # Use
 
