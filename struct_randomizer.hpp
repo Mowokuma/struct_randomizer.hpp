@@ -12,7 +12,7 @@
 // Configuration
 // ============================================================
 #ifndef RANDOM_LAYOUT_SEED
-#error "RANDOM_LAYOUT_SEED must be defined. Ex: -DRANDOM_LAYOUT_SEED=0x44"
+#error "RANDOM_LAYOUT_SEED must be defined. Ex: -DRANDOM_LAYOUT_SEED=0x14"
 #endif
 
 // Random padding inserted inbetween each field.
